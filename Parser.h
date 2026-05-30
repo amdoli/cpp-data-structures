@@ -9,7 +9,7 @@ class Parser{
     
     int sorter(char tokenValue);
 
-    std::vector<Token> parse(const std::vector<Token>& tokens);
+    std::string parse(const std::vector<Token>& tokens);
 };
 
 #endif

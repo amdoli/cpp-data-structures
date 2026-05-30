@@ -29,6 +29,7 @@ class linkedList{
     void insert(T value);
     void deleteValue(T target);
     void printlist();
+    T showTheTop();
     int sizeOfLinkedList();
     void freeAll();
 };
@@ -53,7 +54,7 @@ void linkedList<T>::deleteValue(T target){
   Node<T>* current = head;
   if ( size < 0 ) return;
   
-  if (current -> data == target){
+  if (current -> Data == target){
 
     head = head -> nextNode;
 
@@ -68,7 +69,7 @@ void linkedList<T>::deleteValue(T target){
 
     while( current != nullptr){
 
-      if (current -> data != target) {
+      if (current -> Data != target) {
         previous = current;
         current = current -> nextNode;
         continue;
@@ -119,6 +120,13 @@ void linkedList<T>::freeAll() {
   }
 }
 
+template <typename T>
+T linkedList<T>::showTheTop() {
+  if ( sizeOfLinkedList() > 0 ) {
+    return head -> Data;
+  }
+  return T();
+}
 
 
 #endif

@@ -70,19 +70,3 @@ std::vector<Token> Tokenizer::tokenize(const std::string& expression) {
   }
   return Equation;
 }
-
-int main(){
-
-
-  Tokenizer test;
-  std::string user_input = "";
-
-  std::vector<Token> buffer = test.tokenize("velocty / delta_time + 5");
-  for ( int i = 0; i < buffer.size(); i++ ) {
-    std::cout << buffer[i].value;
-  }
-  std::cout << "\n";
-
-
-  return 0;
-}
