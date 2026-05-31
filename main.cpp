@@ -7,7 +7,7 @@ int main(){
   
   Tokenizer Sorterer;
 
-  std::vector<Token> equation = Sorterer.tokenize("5 + 4 * 3");
+  std::vector<Token> equation = Sorterer.tokenize("5 + 4 * 3 *5*2");
 
   Parser mathParser;
   mathParser.parse(equation);

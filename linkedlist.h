@@ -95,7 +95,7 @@ void linkedList<T>::printlist(){
   while (current != nullptr){
     counter++;
 
-    std::cout << current->data;
+    std::cout << current -> Data;
 
     if (counter < size) {
       std::cout << ",";
