@@ -50,6 +50,9 @@ std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
     Stack.deleteValue(topOp);
   }
 
+  Stack.freeAll();
+  return Output;
+  /*
   std::cout << "==============" << std::endl;
   for (int i = 0; i < Output.size(); i++)
   {
@@ -57,6 +60,7 @@ std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
   }
   std::cout << "\n==============\n" << std::endl;
   return Output;
+  */
 }
 
 std::vector<Token> Parser::forceParse(const std::string& expression) {
