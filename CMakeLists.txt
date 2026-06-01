@@ -8,4 +8,5 @@ add_executable(engine
   main.cpp
   Parser.cpp
   tokenizer.cpp
+  Evaluator.cpp
 )
