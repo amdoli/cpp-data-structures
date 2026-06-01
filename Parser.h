@@ -10,6 +10,7 @@ class Parser{
     int sorter(char tokenValue);
 
     std::vector<Token> parse(const std::vector<Token>& tokens);
+    std::vector<Token> forceParse(const std::string& expressino);
 };
 
 #endif

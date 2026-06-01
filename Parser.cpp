@@ -49,11 +49,24 @@ std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
     Output.push_back(newOperator);
     Stack.deleteValue(topOp);
   }
+
+  std::cout << "==============" << std::endl;
   for (int i = 0; i < Output.size(); i++)
   {
     std::cout << Output[i].value << " ";
   }
+  std::cout << "\n==============\n" << std::endl;
   return Output;
+}
+
+std::vector<Token> Parser::forceParse(const std::string& expression) {
+
+  Tokenizer tokenizer;
+  tokenizer.tokenize(expression);
+  std::vector<Token> tokenizedEquation = tokenizer.tokenize(expression);
+
+  return parse(tokenizedEquation);
+
 }
 
 
