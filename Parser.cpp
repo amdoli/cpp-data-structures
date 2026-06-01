@@ -25,35 +25,36 @@ std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
 
   for ( int i = 0; i < tokens.size() ; i++ ) 
   {
-    std::string topOperator = Stack.showTheTop();
     char current = tokens[i].value[0];
-    if ( sorter(current) == 0 ) { 
-      Output.push_back(tokens[i]);
-    }
+    if ( sorter(current) == 0 ) Output.push_back(tokens[i]);
     
-    if ( sorter(current) >= 1 ) {
-      if (Stack.sizeOfLinkedList() == 0) {
-        Stack.insert(tokens[i].value);
+    if ( sorter(current) >= 1 ) 
+    {
+      while (Stack.sizeOfLinkedList() > 0 && sorter(current) <= sorter(Stack.showTheTop()[0]) ) 
+      {
+        std::string topOp = Stack.showTheTop();
+        Token newOperator = { TokenType::Operator , topOp};
+        Output.push_back(newOperator);
+        Stack.deleteValue(topOp);
       }
-      else {
-        while (Stack.sizeOfLinkedList() > 0 && sorter(current) <= sorter(Stack.showTheTop()[0]) ) 
-        {
-          std::string topOp = Stack.showTheTop();
-          Output.push_back(topOp);
-          Stack.deleteValue(topOp;
-        }
-        Stack.insert(tokens[i].value);
-      }
+      Stack.insert(tokens[i].value);
     }
   }
   // I declared Size because It will be constant while Stack.sizeOfLinkedList is changable
   int Size = Stack.sizeOfLinkedList();
   while (Stack.sizeOfLinkedList() > 0)
   {
-    topOp = Stack.showTheTop();
-    Output.push_back(top) topOperator;
-    Stack.deleteValue(topOperator);
+    std::string topOp = Stack.showTheTop();
+    Token newOperator = {TokenType::Operator, topOp};
+    Output.push_back(newOperator);
+    Stack.deleteValue(topOp);
+  }
+  for (int i = 0; i < Output.size(); i++)
+  {
+    std::cout << Output[i].value << " ";
   }
   return Output;
 }
+
+
 

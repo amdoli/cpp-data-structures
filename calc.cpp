@@ -5,7 +5,7 @@
 int main(){
 
 
-  linkedList list;
+  linkedList<int> list;
   
   list.insert(5);
 
