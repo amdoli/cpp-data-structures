@@ -1,14 +1,14 @@
 #include <iostream>
-#include "linkedlist.h"
+#include "Evaluator.h"
 
 
 int main(){
 
 
-  linkedList<int> list;
-  
-  list.insert(5);
+  Evaluator evaluate;
 
+  double result = evaluate.Solve("324/34");
+  std::cout << result << std::endl;
 
 
   return 0;

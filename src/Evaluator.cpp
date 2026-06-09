@@ -1,6 +1,7 @@
 #include "Evaluator.h"
 #include "tokenizer.h"
 #include "linkedlist.h"
+#include "Parser.h"
 
 #include <iostream>
 #include <vector>
@@ -56,5 +57,13 @@ double Evaluator::evaluate (const std::vector<Token>& parsedEquation) {
     NumbersStack.freeAll();
     return result;
    
+
+}
+
+double Evaluator::Solve (const std::string& expression) {
+    
+    Parser parser;
+    std::vector<Token> parsedEquation = parser.forceParse(expression);
+    return evaluate(parsedEquation);
 
 }

@@ -9,6 +9,7 @@
 class Evaluator {
     public:
     double evaluate(const std::vector<Token>& parsedEquation);
+    double Solve(const std::string& expression);
 };
 
 

@@ -22,7 +22,7 @@ int main(){
   // but you don't have to write all that!
   // you can just write this:
   
-  std::vector<Token> parsedEquation = mathParser.forceParse("25 + 5 - 12 * 43 /4");
+  std::vector<Token> parsedEquation = mathParser.forceParse("10+2*10");
   // OUTPUT: 25 5 + 12 43 * 4 / -
 
   Evaluator evaluator;
