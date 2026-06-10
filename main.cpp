@@ -35,11 +35,20 @@ int main(){
 
   // I tried to show you how my programs talked to each others
   // However it's better to use it like this
+
   // ===========================
   //      The fastest way
   // ===========================
-  result = evaluator.evaluate(evaluator.forceParse("25 + 5 - 12 * 43 /4"));   // you can simply set a variable to handle evaluator.forceParce() for more readability 
+
+  result = evaluator.solve("25 + 5 - 12 * 43 /4");   // you can simply set a variable to handle evaluator.forceParce() for more readability 
   std::cout << result << std::endl;
+
+  // if you want to add a variable 
+  evaluator.setVariable("velocity", "10"); // first is the name of variable, second is the value
+  evaluator.setVariable("time", "2");
+  double acceleration = evaluator.solve("velocity / time");
+  std::cout << "acceleration = " << acceleration << std::endl;
+
   
 
 

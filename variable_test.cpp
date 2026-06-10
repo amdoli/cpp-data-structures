@@ -9,8 +9,14 @@ int main(){
 
     table.setVariable("x", "20");
     table.setVariable("x", "40");
-    value = table.getVariable("x");
+
+    table.setVariable("y", "50");
+
+    table.showVariables();
+
+    value = table.getVariable("y");
     std::cout << value << std::endl;
+    
 
     return 0;
 }

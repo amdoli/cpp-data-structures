@@ -17,6 +17,7 @@ class SympolTable {
     SympolTable();
     void setVariable(std::string name, std::string value);
     std::string getVariable(std::string name);
+    void showVariables();
 
 
     ~SympolTable();

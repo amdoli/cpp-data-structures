@@ -42,6 +42,18 @@ std::string SympolTable::getVariable(std::string name) {
     return "0.0";
 }
 
+void SympolTable::showVariables(){
+    node* current = head;
+    std::cout << "[";
+    while ( current != nullptr ) {
+        std::cout << current->identifire << ":" << current->data;
+        
+        current = current -> nextNode;
+        if (current != nullptr) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
+}
+
 SympolTable::~SympolTable(){
     node* current = head;
     node* previous = current;

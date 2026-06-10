@@ -30,6 +30,7 @@ std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
       Token currentToken = tokens[i];
       // then it's ether a number or a variable!
       if ( tokens[i].type == TokenType::Variable ) {
+        showVariables();
         currentToken.value = getVariable(tokens[i].value); // for example if x = 25 the condition will change from x to 25
       }
       // in number we don't have to do anything just push it

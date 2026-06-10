@@ -1,0 +1,10 @@
+^C:\USERS\A7MD109ALR\DESKTOP\AHMEDWORKS\CODES\C++\CPP-DATA-STRUCTURES\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/A7md109alr/Desktop/AhmedWorks/codes/c++/cpp-data-structures -BC:/Users/A7md109alr/Desktop/AhmedWorks/codes/c++/cpp-data-structures/build --check-stamp-file C:/Users/A7md109alr/Desktop/AhmedWorks/codes/c++/cpp-data-structures/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

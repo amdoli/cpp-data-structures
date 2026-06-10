@@ -60,7 +60,7 @@ double Evaluator::evaluate (const std::vector<Token>& parsedEquation) {
 
 }
 
-double Evaluator::Solve (const std::string& expression) {
+double Evaluator::solve (const std::string& expression) {
     
     Parser parser;
     std::vector<Token> parsedEquation = parser.forceParse(expression);

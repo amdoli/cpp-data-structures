@@ -6,8 +6,8 @@ int main(){
 
 
   Evaluator evaluate;
-
-  double result = evaluate.Solve("324/34");
+  evaluate.setVariable("x" ,"20");
+  double result = evaluate.Solve("x+10");
   std::cout << result << std::endl;
 
 
