@@ -3,10 +3,11 @@
 
 #include "tokenizer.h"
 #include "linkedlist.h"
+#include "Parser.h"
 #include <iostream>
 #include <vector>
 
-class Evaluator {
+class Evaluator : public Parser {
     public:
     double evaluate(const std::vector<Token>& parsedEquation);
     double Solve(const std::string& expression);

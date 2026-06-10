@@ -12,7 +12,7 @@ double Evaluator::evaluate (const std::vector<Token>& parsedEquation) {
     linkedList<double> NumbersStack;
 
     for (int i = 0; i < parsedEquation.size(); i++) {
-        if ( parsedEquation[i].type == TokenType::Number ) 
+        if ( parsedEquation[i].type == TokenType::Number || parsedEquation[i].type == TokenType::Variable) 
         {
             NumbersStack.insert( std::stod(parsedEquation[i].value) );
         }

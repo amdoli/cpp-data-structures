@@ -20,14 +20,21 @@ int Parser::sorter(char tokenValue){
 std::vector<Token> Parser::parse(const std::vector<Token>& tokens) {
 
   std::vector<Token> Output;
-  linkedList<std::string> Stack;
-
+  linkedList<std::string> Stack;  // that's a buffer for operators
 
   for ( int i = 0; i < tokens.size() ; i++ ) 
   {
     char current = tokens[i].value[0];
-    if ( sorter(current) == 0 ) Output.push_back(tokens[i]);
-    
+
+    if ( sorter(current) == 0 ) {
+      Token currentToken = tokens[i];
+      // then it's ether a number or a variable!
+      if ( tokens[i].type == TokenType::Variable ) {
+        currentToken.value = getVariable(tokens[i].value); // for example if x = 25 the condition will change from x to 25
+      }
+      // in number we don't have to do anything just push it
+      Output.push_back(currentToken);
+    }
     if ( sorter(current) >= 1 ) 
     {
       while (Stack.sizeOfLinkedList() > 0 && sorter(current) <= sorter(Stack.showTheTop()[0]) ) 

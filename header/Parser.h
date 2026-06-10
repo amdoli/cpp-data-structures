@@ -2,9 +2,11 @@
 #define PARSER_H
 
 #include "tokenizer.h"
+#include "sympolTable.h"
 #include <vector>
 
-class Parser{
+class Parser : public SympolTable{
+
   public:
     
     int sorter(char tokenValue);
